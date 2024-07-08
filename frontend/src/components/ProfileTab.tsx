@@ -15,13 +15,12 @@ function ProfileTab({ user }: Props) {
   return (
     <div
       className="flex items-center justify-between min-w-0 gap-x-4 bg-white p-[20px] mb-[8px]"
-      onClick={() => console.log(user.name, "clicked")}
-    >
+      onClick={() => console.log(user.name, "clicked")}>
       <div className="flex items-center gap-x-4">
         <img
           alt=""
           src={user.img ? user.img : defaultUserImg}
-          className="h-[52px] w-[52px] flex-none rounded-lg bg-gray-50 border border-gray-200"
+          className="h-[52px] w-[52px] flex-none rounded-full bg-gray-50 border border-gray-200"
         />
         <div className="min-w-0 flex flex-col gap-[4px]">
           <p className="text-base font-semibold text-gray-900">
