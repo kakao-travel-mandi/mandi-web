@@ -5,10 +5,12 @@ import set02 from "../assets/pngs/set02.png";
 import set03 from "../assets/pngs/set03.png";
 import RightArrowIcon from "../assets/svgs/RightArrow.svg?react";
 
-export const dummyUser = {
+const dummyUser = {
   name: "만디",
   img: "",
   description: "나는 만디인디",
+  review: 0,
+  visited: 0,
 };
 
 const MypageList = [
