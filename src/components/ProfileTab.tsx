@@ -23,8 +23,7 @@ function ProfileTab({ user }: Props) {
     <div className="bg-white p-[20px] mb-[8px]">
       <div
         className="flex items-center justify-between min-w-0 gap-x-4"
-        onClick={() => console.log(user.name, "clicked")}
-      >
+        onClick={() => console.log(user.name, "clicked")}>
         <div className="flex items-center gap-x-4">
           <img
             alt=""
@@ -56,8 +55,7 @@ function ProfileTab({ user }: Props) {
         </button>
         <button
           className="w-full bg-gray-50 rounded-lg"
-          onClick={() => navigate("/conq-course")}
-        >
+          onClick={() => navigate("/mypage/conq-course")}>
           <div className="flex justify-between px-[12px] py-[16px]">
             <div className="flex gap-1 items-center">
               <img src={flagImg} className="w-[16px] h-[16px]" alt="pencil" />
