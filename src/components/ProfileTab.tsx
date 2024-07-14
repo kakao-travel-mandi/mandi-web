@@ -1,7 +1,8 @@
 import defaultUserImg from "/assets/pngs/default.png";
 import pencilImg from "/assets/pngs/pencil.png";
 import flagImg from "/assets/pngs/flag.png";
-import {RightArrow} from "@/components/icons";
+import { useNavigate } from "react-router-dom";
+import { RightArrow } from "./icons";
 
 type UserInfoProps = {
   name: string;
@@ -16,6 +17,8 @@ type Props = {
 };
 
 function ProfileTab({ user }: Props) {
+  const navigate = useNavigate();
+
   return (
     <div className="bg-white p-[20px] mb-[8px]">
       <div
@@ -39,21 +42,24 @@ function ProfileTab({ user }: Props) {
             </p>
           </div>
         </div>
-        <RightArrow width={12} height={12} />
+        <RightArrow className="w-[12px] h-[12px]" />
       </div>
-      <div className="flex w-full justify-between gap-[8px] mt-[16px] text-[14px]">
+      <div className="flex w-full justify-between gap-[8px] mt-[16px] text-sm">
         <button className="w-full bg-gray-50 rounded-lg">
           <div className="flex justify-between px-[12px] py-[16px]">
-            <div className="flex gap-[4px] items-center">
+            <div className="flex gap-1 items-center">
               <img src={pencilImg} className="w-[16px] h-[16px]" alt="pencil" />
               <p className="text-gray-700">나의 코스 후기</p>
             </div>
             <p className="text-gray-800">{user.review}</p>
           </div>
         </button>
-        <button className="w-full bg-gray-50 rounded-lg">
+        <button
+          className="w-full bg-gray-50 rounded-lg"
+          onClick={() => navigate("/conq-course")}
+        >
           <div className="flex justify-between px-[12px] py-[16px]">
-            <div className="flex gap-[4px] items-center">
+            <div className="flex gap-1 items-center">
               <img src={flagImg} className="w-[16px] h-[16px]" alt="pencil" />
               <p className="text-gray-700">정복 코스 목록</p>
             </div>

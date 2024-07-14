@@ -94,10 +94,20 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "fade-out": {
+          from: { transform: "none" },
+          to: { transform: "translateY(100%)" },
+        },
+        "fade-in": {
+          from: { transform: "translateY(100%)" },
+          to: { transform: "none" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "sheet-up": "fade-in 0.3s ease-in-out forwards",
+        "sheet-down": "fade-out 0.3s ease-in-out forwards",
       },
       boxShadow: {
         up: "0 -2px 3px rgba(0, 0, 0, 0.5)",
