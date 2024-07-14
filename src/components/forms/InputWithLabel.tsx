@@ -11,7 +11,7 @@ export function InputWithLabel({
   required?: boolean;
 }) {
   return (
-    <div className="grid w-full max-w-sm items-center gap-1.5">
+    <div className="grid w-full max-w-xl items-center gap-1.5">
       <Label htmlFor={value} className="text-lg">
         {title}
         <span className="text-red-600 leading-6">{required ? "*" : null}</span>

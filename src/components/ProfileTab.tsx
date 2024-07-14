@@ -22,7 +22,7 @@ function ProfileTab({ user }: Props) {
   return (
     <div className="bg-white p-[20px] mb-[8px]">
       <div
-        className="flex items-center justify-between min-w-0 gap-x-4"
+        className="flex items-center justify-between min-w-0 gap-x-4 cursor-pointer"
         onClick={() => navigate("/mypage/profile-setting")}>
         <div className="flex items-center gap-x-4">
           <img

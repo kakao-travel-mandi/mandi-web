@@ -8,7 +8,7 @@ function App() {
   return (
     <div className=" w-[100vw] h-[100dvh] flex flex-col justify-between overflow-hidden">
       <BrowserRouter>
-        <div>
+        <div className="h-[100%]">
           <HeaderComponent />
           <Router />
         </div>

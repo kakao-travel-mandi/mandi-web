@@ -54,12 +54,12 @@ export const RouteSource = [
   {
     path: "/mypage/mycomments",
     element: <MyCommentsComponent />,
-    title: "정복한 코스 목록",
+    title: "나의 코스 후기",
   },
   {
     path: "/mypage/profile-setting",
     element: <ProfileSettingPage />,
-    title: "정복한 코스 목록",
+    title: "프로필 변경",
   },
 ];
 
