@@ -5,7 +5,7 @@ import set02 from "/assets/pngs/set02.png";
 import set03 from "/assets/pngs/set03.png";
 import { RightArrow } from "@/components/icons";
 
-const dummyUser = {
+export const dummyUser = {
   name: "만디",
   img: "",
   description: "나는 만디인디",

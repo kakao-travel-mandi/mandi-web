@@ -12,6 +12,8 @@ import {
   SparklesIcon,
   UserRoundIcon,
 } from "lucide-react";
+import { MyCommentsComponent } from "@/pages/MyComments";
+import ProfileSettingPage from "@/pages/ProfileSetting";
 
 export const RouteSource = [
   {
@@ -47,6 +49,16 @@ export const RouteSource = [
   {
     path: "/mypage/conq-course",
     element: <ConqCoursePage />,
+    title: "정복한 코스 목록",
+  },
+  {
+    path: "/mypage/mycomments",
+    element: <MyCommentsComponent />,
+    title: "정복한 코스 목록",
+  },
+  {
+    path: "/mypage/profile-setting",
+    element: <ProfileSettingPage />,
     title: "정복한 코스 목록",
   },
 ];

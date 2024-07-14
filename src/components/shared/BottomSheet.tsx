@@ -30,13 +30,11 @@ function BottomSheet({ isShow, children, onClose }: Props) {
   return (
     <div
       onClick={onClose}
-      className="absolute w-full h-full left-0 top-0 bg-gray-800/[.65]"
-    >
+      className="absolute w-full h-full left-0 top-0 bg-gray-800/[.65] z-50">
       <div
         className={`absolute flex flex-col bottom-0 left-0 bg-white w-full min-h-52 px-5 py-6 rounded-t-[32px] font-semibold text-gray-800 gap-4 ${
           isShow ? "animate-sheet-up" : "animate-sheet-down"
-        }`}
-      >
+        }`}>
         {children}
       </div>
     </div>

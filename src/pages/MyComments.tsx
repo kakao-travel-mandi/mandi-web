@@ -1,8 +1,8 @@
-import ConqCourseInfo from "@/components/shared/ConqCourseInfo";
-import SelectChip from "@/components/shared/SelectChip";
-import mountainImg from "/assets/pngs/mountain.png";
 import CourseReviewItem from "@/components/shared/CourseReviewItem";
+import mountainImg from "/assets/pngs/mountain.png";
 import ThumbImg from "/assets/pngs/Rectangle.png";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { TabButtonComponent } from "@/components/Layout/TabButton";
 
 const dummyCourse = {
   name: "신선대 둘레길",
@@ -51,33 +51,39 @@ const dummyList = [
   },
 ];
 
-function ConqCoursePage() {
-  const selectItems = {
-    DEFAULT: 1,
-    1: "정복 일자 순",
-    2: "코스 거리 순",
-    3: "순위 높은 순",
-    4: "가나다 순",
-  };
+const dummyList2 = [];
 
+export const MyCommentsComponent = () => {
   return (
-    <div>
-      <ConqCourseInfo />
-      <div className="px-5 py-3">
-        <SelectChip items={selectItems} />
-        <div className="mt-3 space-y-5">
-          {dummyList.map((item) => (
+    <Tabs defaultValue="nonComment" className="w-full">
+      <TabsList className="grid w-full h-full grid-cols-2 bg-white p-0">
+        <TabButtonComponent value="nonComment">후기 작성(0)</TabButtonComponent>
+        <TabButtonComponent value="comment">작성한 후기(3)</TabButtonComponent>
+      </TabsList>
+      <TabsContent className="" value="nonComment">
+        {dummyList2.map((item) =>
+          dummyList2.length > 0 ? (
             <CourseReviewItem
               key={item.id}
               course={item.course}
               review={item.review}
               type="default"
             />
-          ))}
-        </div>
-      </div>
-    </div>
+          ) : null,
+        )}
+      </TabsContent>
+      <TabsContent className="flex flex-col gap-3 p-3" value="comment">
+        {dummyList.map((item) =>
+          dummyList.length > 0 ? (
+            <CourseReviewItem
+              key={item.id}
+              course={item.course}
+              review={item.review}
+              type="default"
+            />
+          ) : null,
+        )}
+      </TabsContent>
+    </Tabs>
   );
-}
-
-export default ConqCoursePage;
+};

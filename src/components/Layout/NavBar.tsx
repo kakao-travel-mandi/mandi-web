@@ -3,7 +3,7 @@ import { RouteSource } from "@/routers/Router";
 
 export const NavBar = () => {
   return (
-    <footer className="z-50 w-full overflow-hidden rounded-t-xl shadow-up shadow-border bg-white">
+    <footer className="z-40 w-full overflow-hidden rounded-t-xl shadow-up shadow-border bg-white">
       <nav className="flex grow items-start justify-start h-full">
         {RouteSource.map((route) =>
           route.icon ? (

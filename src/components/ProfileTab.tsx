@@ -23,7 +23,7 @@ function ProfileTab({ user }: Props) {
     <div className="bg-white p-[20px] mb-[8px]">
       <div
         className="flex items-center justify-between min-w-0 gap-x-4"
-        onClick={() => console.log(user.name, "clicked")}>
+        onClick={() => navigate("/mypage/profile-setting")}>
         <div className="flex items-center gap-x-4">
           <img
             alt=""
@@ -44,7 +44,9 @@ function ProfileTab({ user }: Props) {
         <RightArrow className="w-[12px] h-[12px]" />
       </div>
       <div className="flex w-full justify-between gap-[8px] mt-[16px] text-sm">
-        <button className="w-full bg-gray-50 rounded-lg">
+        <button
+          className="w-full bg-gray-50 rounded-lg"
+          onClick={() => navigate("/mypage/mycomments")}>
           <div className="flex justify-between px-[12px] py-[16px]">
             <div className="flex gap-1 items-center">
               <img src={pencilImg} className="w-[16px] h-[16px]" alt="pencil" />
