@@ -1,7 +1,7 @@
-import defaultUserImg from "../../public/assets/pngs/default.png";
-import pencilImg from "../../public/assets/pngs/pencil.png";
-import flagImg from "../../public/assets/pngs/flag.png";
-import RightArrowIcon from "../../public/assets/svgs/right-arrow.svg?react";
+import defaultUserImg from "/assets/pngs/default.png";
+import pencilImg from "/assets/pngs/pencil.png";
+import flagImg from "/assets/pngs/flag.png";
+import {RightArrow} from "@/components/icons";
 
 type UserInfoProps = {
   name: string;
@@ -39,7 +39,7 @@ function ProfileTab({ user }: Props) {
             </p>
           </div>
         </div>
-        <RightArrowIcon className="w-[12px] h-[12px]" />
+        <RightArrow width={12} height={12} />
       </div>
       <div className="flex w-full justify-between gap-[8px] mt-[16px] text-[14px]">
         <button className="w-full bg-gray-50 rounded-lg">
