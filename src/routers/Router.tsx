@@ -1,41 +1,48 @@
-import CoursePage from "@/pages/CoursePage";
 import Home from "@/pages/Home";
-import MyCoursePage from "@/pages/MyCoursePage";
-import MyPage from "@/pages/MyPage";
+import CoursePage from "@/pages/CoursePage";
+import ScrapPage from "@/pages/ScrapPage";
 import RankingPage from "@/pages/RankingPage";
+import MyPage from "@/pages/MyPage";
 import ConqCoursePage from "@/pages/ConqCoursePage";
 import { Route, Routes } from "react-router-dom";
+import {
+  BookmarkIcon,
+  HouseIcon,
+  MapIcon,
+  SparklesIcon,
+  UserRoundIcon,
+} from "lucide-react";
 
 export const RouteSource = [
   {
     path: "/",
     element: <Home />,
     title: "홈",
-    isMain: true,
+    icon: <HouseIcon size={28} strokeWidth="2.5" />,
   },
   {
     path: "/course",
     element: <CoursePage />,
     title: "코스",
-    isMain: true,
+    icon: <MapIcon size={28} strokeWidth="2.5" />,
   },
   {
-    path: "/mycourse",
-    element: <MyCoursePage />,
-    title: "내 코스",
-    isMain: true,
+    path: "/scrap",
+    element: <ScrapPage />,
+    title: "스크랩",
+    icon: <BookmarkIcon size={28} strokeWidth="2.5" />,
   },
   {
     path: "/ranking",
     element: <RankingPage />,
     title: "랭킹페이지",
-    isMain: true,
+    icon: <SparklesIcon size={28} strokeWidth="2.5" />,
   },
   {
     path: "/mypage",
     element: <MyPage />,
     title: "내 정보",
-    isMain: true,
+    icon: <UserRoundIcon size={28} strokeWidth="2.5" />,
   },
   {
     path: "/mypage/conq-course",

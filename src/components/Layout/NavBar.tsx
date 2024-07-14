@@ -6,11 +6,12 @@ export const NavBar = () => {
     <footer className="z-50 w-full overflow-hidden rounded-t-xl shadow-up shadow-border bg-white">
       <nav className="flex grow items-start justify-start h-full">
         {RouteSource.map((route) =>
-          route.isMain ? (
+          route.icon ? (
             <NavButtonComponent
               key={route.path}
               title={route.title}
               path={route.path}
+              icon={route.icon}
             />
           ) : null,
         )}

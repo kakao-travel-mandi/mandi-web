@@ -5,9 +5,11 @@ import { cn } from "../lib/utils";
 export const NavButtonComponent = ({
   title,
   path,
+  icon,
 }: {
   title: string;
   path: string;
+  icon: React.ReactElement;
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -20,7 +22,7 @@ export const NavButtonComponent = ({
   return (
     <Button
       className={cn(
-        "flex justify-center items-center h-full w-full py-6 font-bold hover:bg-slate-200 hover:text-black rounded-none text-xl",
+        "flex justify-center items-center h-full w-full py-6 font-bold hover:bg-slate-200 hover:text-black rounded-none text-xl flex-col gap-5",
         isActive ? "text-black" : "text-gray-500",
       )}
       title={title}
@@ -28,6 +30,7 @@ export const NavButtonComponent = ({
         console.log(path);
         navigate(path);
       }}>
+      {icon}
       {title}
     </Button>
   );
