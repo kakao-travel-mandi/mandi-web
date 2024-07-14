@@ -1,9 +1,10 @@
 import ListWrapper from "../components/List/ListWrapper";
 import ProfileTab from "../components/ProfileTab";
-import set01 from "../assets/pngs/set01.png";
-import set02 from "../assets/pngs/set02.png";
-import set03 from "../assets/pngs/set03.png";
-import RightArrowIcon from "../assets/svgs/RightArrow.svg?react";
+import set01 from "/assets/pngs/set01.png";
+import set02 from "/assets/pngs/set02.png";
+import set03 from "/assets/pngs/set03.png";
+import {RightArrow} from "@/components/icons";
+
 
 const dummyUser = {
   name: "만디",
@@ -22,7 +23,7 @@ const MypageList = [
       {
         id: 0,
         title: "나의 뱃지",
-        icon: <RightArrowIcon />,
+        icon: <RightArrow width={12} height={12} />,
       },
     ],
   },
@@ -34,17 +35,17 @@ const MypageList = [
       {
         id: 0,
         title: "이용 약관",
-        icon: <RightArrowIcon />,
+        icon: <RightArrow width={12} height={12} />,
       },
       {
         id: 1,
         title: "개인정보 처리방침",
-        icon: <RightArrowIcon />,
+        icon: <RightArrow width={12} height={12} />,
       },
       {
         id: 2,
         title: "오픈소스 라이선스",
-        icon: <RightArrowIcon />,
+        icon: <RightArrow width={12} height={12} />,
       },
       {
         id: 3,
@@ -61,12 +62,12 @@ const MypageList = [
       {
         id: 0,
         title: "알림 설정",
-        icon: <RightArrowIcon />,
+        icon: <RightArrow width={12} height={12} />,
       },
       {
         id: 1,
         title: "로그인 정보",
-        icon: <RightArrowIcon />,
+        icon: <RightArrow width={12} height={12} />,
       },
     ],
   },

@@ -1,7 +1,7 @@
-import defaultUserImg from "../assets/pngs/default.png";
-import pencilImg from "../assets/pngs/pencil.png";
-import flagImg from "../assets/pngs/flag.png";
-import RightArrowIcon from "../assets/svgs/RightArrow.svg?react";
+import defaultUserImg from "../../public/assets/pngs/default.png";
+import pencilImg from "../../public/assets/pngs/pencil.png";
+import flagImg from "../../public/assets/pngs/flag.png";
+import RightArrowIcon from "../../public/assets/svgs/right-arrow.svg?react";
 
 type UserInfoProps = {
   name: string;
