@@ -3,8 +3,7 @@ import ProfileTab from "../components/ProfileTab";
 import set01 from "/assets/pngs/set01.png";
 import set02 from "/assets/pngs/set02.png";
 import set03 from "/assets/pngs/set03.png";
-import {RightArrow} from "@/components/icons";
-
+import { RightArrow } from "@/components/icons";
 
 const dummyUser = {
   name: "만디",
@@ -78,7 +77,7 @@ function MyPage() {
     ? MypageList
     : MypageList.filter((item) => item.id === 2);
   return (
-    <>
+    <div>
       <ProfileTab user={dummyUser} />
       {filteredMypageList.map((item) => (
         <ListWrapper
@@ -88,7 +87,7 @@ function MyPage() {
           key={item.id}
         />
       ))}
-    </>
+    </div>
   );
 }
 
