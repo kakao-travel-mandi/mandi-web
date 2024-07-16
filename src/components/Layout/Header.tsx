@@ -1,6 +1,7 @@
-import { RouteSource } from "@/routers/Router";
+
 import { BellIcon, ChevronLeftIcon } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
+import {RouteSource} from "@/routers/routeSource.tsx";
 
 export const HeaderComponent = () => {
   const location = useLocation();

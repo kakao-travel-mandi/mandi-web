@@ -1,5 +1,6 @@
 import { NavButtonComponent } from "./NavButton";
-import { RouteSource } from "@/routers/Router";
+import {RouteSource} from "@/routers/routeSource.tsx";
+
 
 export const NavBar = () => {
   return (
