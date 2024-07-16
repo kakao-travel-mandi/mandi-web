@@ -1,26 +1,23 @@
 import type { SVGProps } from "react";
 import { Ref, forwardRef, memo } from "react";
-const SvgDownArrow = (
-  props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
-) => (
+const SvgClock = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
-    viewBox="0 0 14 14"
+    viewBox="0 0 16 16"
     width={props.width || 24}
     height={props.height || 24}
     ref={ref}
     {...props}
   >
     <path
-      fill="#4D5159"
+      fill="#ADB1BA"
       fillRule="evenodd"
-      d="M2.275 5.031c0-.201.079-.402.228-.56a.79.79 0 0 1 1.11 0L7 7.857l3.377-3.386a.79.79 0 0 1 1.112 0 .79.79 0 0 1 0 1.111L7.55 9.52a.79.79 0 0 1-1.111 0L2.503 5.582a.78.78 0 0 1-.228-.55"
+      d="M8 14.4A6.4 6.4 0 1 0 8 1.6a6.4 6.4 0 0 0 0 12.8m.8-9.6a.8.8 0 1 0-1.6 0V8a.8.8 0 0 0 .234.566l2.263 2.262a.8.8 0 1 0 1.132-1.131L8.8 7.669z"
       clipRule="evenodd"
     />
   </svg>
 );
-const ForwardRef = forwardRef(SvgDownArrow);
+const ForwardRef = forwardRef(SvgClock);
 const Memo = memo(ForwardRef);
 export default Memo;

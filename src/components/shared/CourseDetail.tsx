@@ -1,5 +1,8 @@
-import { ClockIcon, DotsIcon, PinMapIcon } from "../icons";
+
 import Chip from "./Chip";
+import DotsIcon from "@/components/icons/DotsIcon.tsx";
+import ClockIcon from "@/components/icons/ClockIcon.tsx";
+import PinMapIcon from "@/components/icons/PinMapIcon.tsx";
 
 export type CourseDataProps = {
   name: string;

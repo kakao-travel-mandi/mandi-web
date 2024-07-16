@@ -1,6 +1,7 @@
 import { useState } from "react";
 import BottomSheet from "./BottomSheet";
-import { CheckIcon, DownArrow } from "../icons";
+import { DownArrow } from "../icons";
+import CheckIcon from "@/components/icons/CheckIcon.tsx";
 
 export type SelectionProps = {
   DEFAULT: number;
