@@ -1,7 +1,7 @@
 import CourseReviewItem from "@/components/shared/CourseReviewItem";
 import mountainImg from "/assets/pngs/mountain.png";
 import ThumbImg from "/assets/pngs/Rectangle.png";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList } from "@/components/ui/tabs";
 import { TabButtonComponent } from "@/components/Layout/TabButton";
 
 const dummyCourse = {
@@ -51,8 +51,6 @@ const dummyList = [
   },
 ];
 
-const dummyList2 = [];
-
 export const MyCommentsComponent = () => {
   return (
     <Tabs defaultValue="nonComment" className="w-full">
@@ -61,8 +59,8 @@ export const MyCommentsComponent = () => {
         <TabButtonComponent value="comment">작성한 후기(3)</TabButtonComponent>
       </TabsList>
       <TabsContent className="" value="nonComment">
-        {dummyList2.map((item) =>
-          dummyList2.length > 0 ? (
+        {dummyList.map((item) =>
+          dummyList.length > 0 ? (
             <CourseReviewItem
               key={item.id}
               course={item.course}
