@@ -6,21 +6,29 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button.tsx";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export default function ProfileSettingPage() {
   const { register, handleSubmit, formState } = useForm<{
     nickName: string;
     introduce: string;
   }>();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (formState.errors.nickName?.type === "maxLength") {
-      toast("최대 10자까지 입력 가능해요.", {
+      toast("최대 10자까지 입력 가능해요", {
         type: "error",
         closeButton: false,
       });
     }
-  }, [formState.errors.nickName]);
+    if (formState.errors.introduce?.type === "maxLength") {
+      toast("최대 40자까지 입력 가능해요", {
+        type: "error",
+        closeButton: false,
+      });
+    }
+  }, [formState.errors.nickName, formState.errors.introduce]);
   return (
     <div className="h-full flex flex-col items-center px-4 py-10 bg-white">
       <div className="w-full flex flex-col justify-center items-center gap-7">
@@ -35,10 +43,18 @@ export default function ProfileSettingPage() {
           </div>
         </div>
         <form
-          className="w-full flex flex-col gap-[28px]"
-          onSubmit={handleSubmit((data) => console.log(data))}
+          className="w-full flex flex-col gap-[28px] items-center"
+          onSubmit={handleSubmit((data) => {
+            console.log(data);
+            // TODO: 중복 검사 API 호출 로직 추가. 성공 시에만 내 정보로 보내기
+            toast("프로필이 변경되었습니다", {
+              type: "success",
+              closeButton: false,
+            });
+            navigate("/mypage");
+          })}
         >
-          <div className="flex flex-col gap-[8px]">
+          <div className="w-full flex flex-col gap-[8px]">
             <InputWithLabel
               title="닉네임"
               value="nickName"
@@ -60,7 +76,7 @@ export default function ProfileSettingPage() {
               {formState.errors.nickName?.message}
             </span>
           </div>
-          <div className="flex flex-col gap-[8px]">
+          <div className="w-full flex flex-col gap-[8px]">
             <InputWithLabel
               title="한 줄 소개"
               value="introduce"
@@ -72,11 +88,15 @@ export default function ProfileSettingPage() {
               })}
               isFormInvalid={Boolean(formState.errors.introduce)}
             />
-            <span>{formState.errors.introduce?.message}</span>
+            <span className="text-[12px] text-red-400">
+              {formState.errors.introduce?.message}
+            </span>
           </div>
           <Button
             className="flex justify-center items-center w-[90%] h-[52px] text-white rounded-lg bg-green-500 hover:bg-green-400 hover:text-white"
             variant="ghost"
+            type="submit"
+            disabled={!formState.isValid}
           >
             저장
           </Button>
