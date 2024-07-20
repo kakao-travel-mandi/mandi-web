@@ -4,9 +4,11 @@ import RankingPage from "@/pages/RankingPage.tsx";
 import MyPage from "@/pages/MyPage.tsx";
 import ConqCoursePage from "@/pages/ConqCoursePage.tsx";
 import { MyCommentsComponent } from "@/pages/MyComments.tsx";
-import ProfileSettingPage from "@/pages/ProfileSetting.tsx";
 import Home from "@/pages/Home.tsx";
 import Layout from "@/components/Layout/Layout.tsx";
+import ProfileSettingPage from "@/pages/ProfileSetting.tsx";
+import BackButton from "@/components/shared/BackButton.tsx";
+import { Notification } from "@/components/icons";
 
 export const RouteSource = [
   {
@@ -22,10 +24,14 @@ export const RouteSource = [
         element: <MyCommentsComponent />,
         title: "나의 코스 후기",
       },
+    ],
+  },
+  {
+    element: <Layout withHeader headerOptions={{ leftUI: <BackButton /> }} />,
+    children: [
       {
         path: "/mypage/profile-setting",
         element: <ProfileSettingPage />,
-        title: "프로필 변경",
       },
     ],
   },
@@ -39,12 +45,26 @@ export const RouteSource = [
     ],
   },
   {
-    element: <Layout withHeader withFooter />,
+    element: (
+      <Layout
+        withHeader
+        headerOptions={{
+          title: "내 정보",
+          rightUI: <Notification width={16} height={18} />,
+        }}
+        withFooter
+      />
+    ),
     children: [
       {
         path: "/mypage",
         element: <MyPage />,
       },
+    ],
+  },
+  {
+    element: <Layout withHeader withFooter />,
+    children: [
       {
         path: "/ranking",
         element: <RankingPage />,
