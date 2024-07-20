@@ -1,4 +1,4 @@
-const ROUTE_PATH = {
+const ROUTE_PATH: Record<string, { path: string; title?: string }> = {
   HOME: {
     path: "/",
     title: "홈",
@@ -13,7 +13,6 @@ const ROUTE_PATH = {
   },
   PROFILE_SETTING: {
     path: "/mypage/profile-setting",
-    title: "프로필 변경",
   },
   MY_PAGE: {
     path: "/mypage",
@@ -31,6 +30,6 @@ const ROUTE_PATH = {
     path: "/scrap",
     title: "스크랩",
   },
-} as const;
+};
 
 export default ROUTE_PATH;

@@ -1,30 +1,32 @@
-import { BellIcon } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import ROUTE_PATH from "@/routers/routePath.ts";
 
 const getTitleFromPath = (pathname: string) => {
   const route = Object.values(ROUTE_PATH).find(
-    (route) => route.path === pathname,
+    (route) => route.path === pathname
   );
   return route ? route.title : null;
 };
 
-export const Header = () => {
+interface HeaderProps {
+  leftUI?: React.ReactNode;
+  rightUI?: React.ReactNode;
+  title?: string;
+}
+
+export const Header = ({ leftUI, rightUI, title }: HeaderProps) => {
   const location = useLocation();
   const currentRouteTitle = getTitleFromPath(location.pathname);
 
   return (
-    <div className="p-5 flex gap-3 justify-center items-center bg-white">
-      <h1 className=" flex-grow text-center text-xl font-bold">
-        {currentRouteTitle ? currentRouteTitle : "페이지를 찾을 수 없습니다"}
-      </h1>
-      <BellIcon
-        className="cursor-pointer"
-        fill="gray"
-        color="gray"
-        size={24}
-        strokeWidth="2.5"
-      />
-    </div>
+    <header className="w-full h-[46px] flex items-center justify-between">
+      <div className="flex justify-center items-center min-w-[64px]">
+        {leftUI}
+      </div>
+      <h1 className="text-hl font-bold">{title || currentRouteTitle}</h1>
+      <div className="flex justify-center items-center min-w-[64px]">
+        {rightUI}
+      </div>
+    </header>
   );
 };
