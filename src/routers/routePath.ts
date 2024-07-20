@@ -13,7 +13,6 @@ const ROUTE_PATH = {
   },
   PROFILE_SETTING: {
     path: "/mypage/profile-setting",
-    title: "프로필 변경",
   },
   MY_PAGE: {
     path: "/mypage",

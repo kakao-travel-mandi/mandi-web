@@ -49,7 +49,6 @@ export const RouteSource = [
       <Layout
         withHeader
         headerOptions={{
-          title: "내 정보",
           rightUI: <Notification width={16} height={18} />,
         }}
         withFooter
