@@ -69,3 +69,5 @@ export const InputWithLabel = forwardRef<HTMLInputElement, InputWithLabelProps>(
     );
   }
 );
+
+InputWithLabel.displayName = "InputWithLabel";
