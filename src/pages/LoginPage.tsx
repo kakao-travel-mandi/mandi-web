@@ -26,7 +26,7 @@ const LoginPage = () => {
             <span className="w-full">Google로 로그인</span>
           </Button>
           <Button
-            className="bg-[#FEE500] w-full flex h-[52px] items-center text-[16px] font-semibold rounded-[12px] px-[20px] py-[14px]"
+            className="bg-[#FEE500] hover:bg-[#FEE500] w-full flex h-[52px] items-center text-[16px] font-semibold rounded-[12px] px-[20px] py-[14px]"
             variant="ghost"
           >
             <KakaoLogo width={20} height={20} />
