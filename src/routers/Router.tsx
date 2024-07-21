@@ -11,8 +11,18 @@ import MyPage from "@/pages/MyPage.tsx";
 import RankingPage from "@/pages/RankingPage.tsx";
 import CoursePage from "@/pages/CoursePage.tsx";
 import ScrapPage from "@/pages/ScrapPage.tsx";
+import LoginPage from "@/pages/LoginPage.tsx";
 
 const Router = createBrowserRouter([
+  {
+    element: <Layout />,
+    children: [
+      {
+        path: ROUTE_PATH.LOGIN.path,
+        element: <LoginPage />,
+      },
+    ],
+  },
   {
     element: <Layout withHeader />,
     children: [
