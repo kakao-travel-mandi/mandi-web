@@ -1,4 +1,4 @@
-import CourseReviewItem from "@/components/shared/CourseReviewItem";
+import CourseReviewCard from "@/components/shared/CourseReviewCard";
 import mountainImg from "/assets/pngs/mountain.png";
 import ThumbImg from "/assets/pngs/Rectangle.png";
 import { Tabs, TabsContent, TabsList } from "@/components/ui/tabs";
@@ -58,10 +58,10 @@ export const MyCommentsComponent = () => {
         <TabButtonComponent value="nonComment">후기 작성(0)</TabButtonComponent>
         <TabButtonComponent value="comment">작성한 후기(3)</TabButtonComponent>
       </TabsList>
-      <TabsContent className="" value="nonComment">
+      <TabsContent className="flex flex-col gap-3 p-3 bg-gray-100" value="nonComment">
         {dummyList.map((item) =>
           dummyList.length > 0 ? (
-            <CourseReviewItem
+            <CourseReviewCard
               key={item.id}
               course={item.course}
               review={item.review}
@@ -70,10 +70,10 @@ export const MyCommentsComponent = () => {
           ) : null,
         )}
       </TabsContent>
-      <TabsContent className="flex flex-col gap-3 p-3" value="comment">
+      <TabsContent className="flex flex-col gap-3 p-3 bg-gray-100" value="comment">
         {dummyList.map((item) =>
           dummyList.length > 0 ? (
-            <CourseReviewItem
+            <CourseReviewCard
               key={item.id}
               course={item.course}
               review={item.review}

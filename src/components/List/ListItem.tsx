@@ -1,21 +1,24 @@
-import { ReactElement, isValidElement } from "react";
+import { isValidElement } from "react";
+import { useNavigate } from "react-router-dom";
+import { SettingListProps } from "./ListWrapper";
 
 type Props = {
-  title: string;
-  show: string | ReactElement;
+  content: SettingListProps;
 };
 
-function ListItem({ title, show }: Props) {
+function ListItem({ content }: Props) {
+  const navigation = useNavigate();
+
   return (
     <div
-      className="flex justify-between items-center px-[20px] py-[10px] mb-[2px] hover:bg-gray-100 cursor-pointer duration-200"
-      onClick={() => console.log(title, "clicked")}>
-      <p className="text-gray-800">{title}</p>
+      className="flex justify-between items-center px-[20px] py-[10px] mb-[2px]"
+      onClick={() => navigation(content.path)}>
+      <p className="text-gray-800 text-sm">{content.title}</p>
       <div
         className={`text-gray-400 ${
-          isValidElement(show) ? "w-[12px] h-[12px]" : "text-right"
+          isValidElement(content.icon) ? "w-[12px] h-[12px]" : "text-right"
         }`}>
-        {show}
+        {content.icon}
       </div>
     </div>
   );

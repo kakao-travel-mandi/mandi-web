@@ -23,6 +23,7 @@ const MypageList = [
         id: 0,
         title: "나의 뱃지",
         icon: <RightArrow width={12} height={12} />,
+        path: "badge",
       },
     ],
   },
@@ -35,21 +36,25 @@ const MypageList = [
         id: 0,
         title: "이용 약관",
         icon: <RightArrow width={12} height={12} />,
+        path: "service-policy",
       },
       {
         id: 1,
         title: "개인정보 처리방침",
         icon: <RightArrow width={12} height={12} />,
+        path: "privacy-policy",
       },
       {
         id: 2,
         title: "오픈소스 라이선스",
         icon: <RightArrow width={12} height={12} />,
+        path: "licenses",
       },
       {
         id: 3,
         title: "앱 버전",
         icon: "0.0.01",
+        path: "version",
       },
     ],
   },
@@ -62,11 +67,13 @@ const MypageList = [
         id: 0,
         title: "알림 설정",
         icon: <RightArrow width={12} height={12} />,
+        path: "alert-setting",
       },
       {
         id: 1,
         title: "로그인 정보",
         icon: <RightArrow width={12} height={12} />,
+        path: "login-info",
       },
     ],
   },
@@ -77,7 +84,7 @@ function MyPage() {
     ? MypageList
     : MypageList.filter((item) => item.id === 2);
   return (
-    <div>
+    <div className="bg-gray-100">
       <ProfileTab user={dummyUser} />
       {filteredMypageList.map((item) => (
         <ListWrapper
