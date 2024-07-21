@@ -8,7 +8,7 @@ export const NavButton = ({
   path,
   icon,
 }: {
-  title: string;
+  title?: string;
   path: string;
   icon: React.ReactElement;
 }) => {

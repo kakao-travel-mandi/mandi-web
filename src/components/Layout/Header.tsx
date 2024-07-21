@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import ROUTE_PATH from "@/routers/routePath.ts";
+import { ROUTE_PATH } from "@/routers/routePath.ts";
 
 const getTitleFromPath = (pathname: string) => {
   const route = Object.values(ROUTE_PATH).find(
