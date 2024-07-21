@@ -6,6 +6,7 @@ import { clsx } from "clsx";
 
 interface InputWithLabelProps {
   title: string;
+  placeholder: string;
   value: string;
   required?: boolean;
   register?: UseFormRegisterReturn;
@@ -13,7 +14,7 @@ interface InputWithLabelProps {
 }
 
 export const InputWithLabel = forwardRef<HTMLInputElement, InputWithLabelProps>(
-  ({ title, required, value, register, isFormInvalid }, ref) => {
+  ({ title, placeholder, required, value, register, isFormInvalid }, ref) => {
     return (
       <div className="flex flex-col w-full max-w-xl items-start gap-1.5">
         <Label
@@ -32,7 +33,7 @@ export const InputWithLabel = forwardRef<HTMLInputElement, InputWithLabelProps>(
           type={value}
           id={value}
           ref={ref}
-          placeholder={title}
+          placeholder={placeholder}
           {...register}
           className={clsx(
             "bg-gray-200 border-gray-300 p-5 placeholder:text-gray-500 text-[16px]",
