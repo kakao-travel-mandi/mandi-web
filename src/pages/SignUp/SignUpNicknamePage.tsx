@@ -21,11 +21,6 @@ export const SignUpNicknamePage = () => {
     }
   }, [formState.errors.nickName]);
 
-  useEffect(() => {
-    if (getValues("nickName")) {
-      console.log(getValues("nickName"));
-    }
-  }, [getValues]);
   return (
     <div className="flex flex-col px-[20px] mt-[24px]">
       <h1 className="text-[24px] font-bold mb-[24px]">
