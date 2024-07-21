@@ -1,6 +1,7 @@
 import { NavButton } from "@/components/Layout/NavButton.tsx";
-import ROUTE_PATH from "@/routers/routePath.ts";
+
 import { Bookmark, HomeIcon, Map, Ranking, UserMono } from "@/components/icons";
+import { ROUTE_PATH } from "@/routers/routePath.ts";
 
 export const FooterNav = () => {
   return (

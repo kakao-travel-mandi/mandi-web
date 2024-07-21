@@ -3,6 +3,7 @@ import pencilImg from "/assets/pngs/pencil.png";
 import flagImg from "/assets/pngs/flag.png";
 import { useNavigate } from "react-router-dom";
 import { RightArrow } from "./icons";
+import { ROUTE_PATH } from "@/routers/routePath.ts";
 
 type UserInfoProps = {
   name: string;
@@ -23,7 +24,8 @@ function ProfileTab({ user }: Props) {
     <div className="bg-white p-[20px] mb-[8px]">
       <div
         className="flex items-center justify-between min-w-0 gap-x-4 cursor-pointer"
-        onClick={() => navigate("/mypage/profile-setting")}>
+        onClick={() => navigate(ROUTE_PATH.PROFILE_SETTING.path)}
+      >
         <div className="flex items-center gap-x-4">
           <img
             alt=""
@@ -46,7 +48,8 @@ function ProfileTab({ user }: Props) {
       <div className="flex w-full justify-between gap-[8px] mt-[16px] text-sm">
         <button
           className="w-full bg-gray-50 rounded-lg"
-          onClick={() => navigate("/mypage/mycomments")}>
+          onClick={() => navigate(ROUTE_PATH.MY_COMMENTS.path)}
+        >
           <div className="flex justify-between px-[12px] py-[16px]">
             <div className="flex gap-1 items-center">
               <img src={pencilImg} className="w-[16px] h-[16px]" alt="pencil" />
@@ -57,7 +60,8 @@ function ProfileTab({ user }: Props) {
         </button>
         <button
           className="w-full bg-gray-50 rounded-lg"
-          onClick={() => navigate("/mypage/conq-course")}>
+          onClick={() => navigate(ROUTE_PATH.CONQUERED_COURSE.path)}
+        >
           <div className="flex justify-between px-[12px] py-[16px]">
             <div className="flex gap-1 items-center">
               <img src={flagImg} className="w-[16px] h-[16px]" alt="pencil" />

@@ -9,18 +9,19 @@ import Layout from "@/components/Layout/Layout.tsx";
 import ProfileSettingPage from "@/pages/ProfileSetting.tsx";
 import BackButton from "@/components/shared/BackButton.tsx";
 import { Notification } from "@/components/icons";
+import { ROUTE_PATH } from "@/routers/routePath.ts";
 
 export const RouteSource = [
   {
     element: <Layout withHeader />,
     children: [
       {
-        path: "/mypage/conq-course",
+        path: ROUTE_PATH.CONQUERED_COURSE.path,
         element: <ConqCoursePage />,
         title: "정복한 코스 목록",
       },
       {
-        path: "/mypage/mycomments",
+        path: ROUTE_PATH.MY_COMMENTS.path,
         element: <MyCommentsComponent />,
         title: "나의 코스 후기",
       },
@@ -30,7 +31,7 @@ export const RouteSource = [
     element: <Layout withHeader headerOptions={{ leftUI: <BackButton /> }} />,
     children: [
       {
-        path: "/mypage/profile-setting",
+        path: ROUTE_PATH.PROFILE_SETTING.path,
         element: <ProfileSettingPage />,
       },
     ],
@@ -56,7 +57,7 @@ export const RouteSource = [
     ),
     children: [
       {
-        path: "/mypage",
+        path: ROUTE_PATH.MY_PAGE.path,
         element: <MyPage />,
       },
     ],
@@ -65,15 +66,15 @@ export const RouteSource = [
     element: <Layout withHeader withFooter />,
     children: [
       {
-        path: "/ranking",
+        path: ROUTE_PATH.RANKING.path,
         element: <RankingPage />,
       },
       {
-        path: "/course",
+        path: ROUTE_PATH.COURSE.path,
         element: <CoursePage />,
       },
       {
-        path: "/scrap",
+        path: ROUTE_PATH.SCRAP.path,
         element: <ScrapPage />,
       },
     ],

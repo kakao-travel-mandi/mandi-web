@@ -1,21 +1,26 @@
-const ROUTE_PATH: Record<string, { path: string; title?: string }> = {
+type Route = {
+  path: string;
+  title?: string;
+};
+
+const routePath = {
   HOME: {
     path: "/",
     title: "홈",
   },
   CONQUERED_COURSE: {
-    path: "/mypage/conq-course",
+    path: "/profile/course-conquered",
     title: "정복한 코스 목록",
   },
   MY_COMMENTS: {
-    path: "/mypage/mycomments",
+    path: "/profile/course-reviews",
     title: "나의 코스 후기",
   },
   PROFILE_SETTING: {
-    path: "/mypage/profile-setting",
+    path: "/profile/change",
   },
   MY_PAGE: {
-    path: "/mypage",
+    path: "/profile",
     title: "내 정보",
   },
   RANKING: {
@@ -30,6 +35,14 @@ const ROUTE_PATH: Record<string, { path: string; title?: string }> = {
     path: "/scrap",
     title: "스크랩",
   },
-};
+  LOGIN: {
+    path: "/login",
+  },
+  SIGNUP: {
+    path: "/signup",
+  },
+} as const;
 
-export default ROUTE_PATH;
+type RouteKey = keyof typeof routePath;
+
+export const ROUTE_PATH: Record<RouteKey, Route> = routePath;
