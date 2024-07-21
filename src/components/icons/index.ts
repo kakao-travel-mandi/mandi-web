@@ -1,4 +1,5 @@
 export { default as Bookmark } from "./Bookmark";
+export { default as CheckCircle } from "./CheckCircle";
 export { default as Check } from "./Check";
 export { default as Clock } from "./Clock";
 export { default as Dots } from "./Dots";
