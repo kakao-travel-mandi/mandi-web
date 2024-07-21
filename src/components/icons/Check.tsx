@@ -11,7 +11,7 @@ const SvgCheck = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     {...props}
   >
     <path
-      fill="#393A40"
+      fill={props.color || "#ADB1BA"}
       d="M10.6 17.2c-.3 0-.6-.1-.8-.4l-4.6-4.6c-.5-.5-.5-1.2 0-1.7s1.2-.5 1.7 0l3.7 3.7 6.6-6.6c.5-.5 1.2-.5 1.7 0s.5 1.2 0 1.7l-7.4 7.4c-.3.4-.6.5-.9.5"
     />
   </svg>
