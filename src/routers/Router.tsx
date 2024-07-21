@@ -12,10 +12,12 @@ import RankingPage from "@/pages/RankingPage.tsx";
 import CoursePage from "@/pages/CoursePage.tsx";
 import ScrapPage from "@/pages/ScrapPage.tsx";
 import LoginPage from "@/pages/LoginPage.tsx";
-import SignUpPage from "@/pages/SignUp/SignUpPage.tsx";
-import SignUpNicknamePage from "@/pages/SignUp/SignUpNicknamePage.tsx";
-import SignUpIntroducePage from "@/pages/SignUp/SignUpIntroducePage.tsx";
-import SignUpCompletePage from "@/pages/SignUp/SignUpCompletePage.tsx";
+import {
+  SignUpCompletePage,
+  SignUpIntroducePage,
+  SignUpNicknamePage,
+  SignUpPage,
+} from "@/pages/SignUp";
 
 const Router = createBrowserRouter([
   {

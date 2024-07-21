@@ -1,5 +1,3 @@
-const SignUpNicknamePage = () => {
+export const SignUpNicknamePage = () => {
   return <div></div>;
 };
-
-export default SignUpNicknamePage;
