@@ -6,6 +6,7 @@ export { default as DownArrow } from "./DownArrow";
 export { default as HomeIcon } from "./HomeIcon";
 export { default as LeftArrow } from "./LeftArrow";
 export { default as MandiLogo } from "./MandiLogo";
+export { default as MandiTitle } from "./MandiTitle";
 export { default as Map } from "./Map";
 export { default as Notification } from "./Notification";
 export { default as PinMap } from "./PinMap";
