@@ -20,8 +20,8 @@ function ListWrapper({ title, icon, contents }: Props) {
         <img src={icon} alt="icon" className="pr-2 size-[18px] box-content" />
         <p className="text-gray-800 font-semibold">{title}</p>
       </div>
-      {contents.map((content) => (
-        <ListItem title={content.title} show={content.icon} />
+      {contents.map((content, index) => (
+        <ListItem key={index} title={content.title} show={content.icon} />
       ))}
     </div>
   );
