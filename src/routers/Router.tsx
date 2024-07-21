@@ -12,6 +12,12 @@ import RankingPage from "@/pages/RankingPage.tsx";
 import CoursePage from "@/pages/CoursePage.tsx";
 import ScrapPage from "@/pages/ScrapPage.tsx";
 import LoginPage from "@/pages/LoginPage.tsx";
+import {
+  SignUpCompletePage,
+  SignUpIntroducePage,
+  SignUpNicknamePage,
+  SignUpPage,
+} from "@/pages/SignUp";
 
 const Router = createBrowserRouter([
   {
@@ -20,6 +26,14 @@ const Router = createBrowserRouter([
       {
         path: ROUTE_PATH.LOGIN.path,
         element: <LoginPage />,
+      },
+      {
+        path: ROUTE_PATH.SIGNUP.path,
+        element: <SignUpPage />,
+      },
+      {
+        path: ROUTE_PATH.SIGNUP_COMPLETE.path,
+        element: <SignUpCompletePage />,
       },
     ],
   },
@@ -42,6 +56,14 @@ const Router = createBrowserRouter([
       {
         path: ROUTE_PATH.PROFILE_SETTING.path,
         element: <ProfileSettingPage />,
+      },
+      {
+        path: ROUTE_PATH.SIGNUP_NICKNAME.path,
+        element: <SignUpNicknamePage />,
+      },
+      {
+        path: ROUTE_PATH.SIGNUP_INTRODUCE.path,
+        element: <SignUpIntroducePage />,
       },
     ],
   },

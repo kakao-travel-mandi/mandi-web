@@ -57,6 +57,7 @@ export default function ProfileSettingPage() {
           <div className="w-full flex flex-col gap-[8px]">
             <InputWithLabel
               title="닉네임"
+              placeholder="닉네임"
               value="nickName"
               required
               register={register("nickName", {
@@ -79,6 +80,7 @@ export default function ProfileSettingPage() {
           <div className="w-full flex flex-col gap-[8px]">
             <InputWithLabel
               title="한 줄 소개"
+              placeholder="한 줄 소개"
               value="introduce"
               register={register("introduce", {
                 maxLength: {

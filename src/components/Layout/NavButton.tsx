@@ -27,7 +27,7 @@ export const NavButton = ({
   return (
     <Button
       className={clsx(
-        "flex flex-col gap-[2px] justify-center items-center h-full w-full text-[10px] py-6 font-bold hover:bg-slate-200 hover:text-black rounded-none cursor-pointer",
+        "bg-white hover:bg-transparent flex flex-col gap-[2px] justify-center items-center h-full w-full text-[10px] py-6 font-bold rounded-none cursor-pointer",
         isActive ? "text-black" : "text-gray-500"
       )}
       title={title}

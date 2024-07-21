@@ -5,7 +5,7 @@ import { ROUTE_PATH } from "@/routers/routePath.ts";
 
 export const FooterNav = () => {
   return (
-    <footer className="z-40 w-full overflow-hidden rounded-t-xl shadow-up shadow-border bg-white">
+    <footer className="z-40 w-full overflow-hidden rounded-t-xl bg-white">
       <nav className="flex grow items-start justify-start h-full">
         <NavButton
           title={ROUTE_PATH.HOME.title}

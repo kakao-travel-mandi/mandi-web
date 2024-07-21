@@ -41,6 +41,15 @@ const routePath = {
   SIGNUP: {
     path: "/signup",
   },
+  SIGNUP_NICKNAME: {
+    path: "/signup/nickname",
+  },
+  SIGNUP_INTRODUCE: {
+    path: "/signup/introduce",
+  },
+  SIGNUP_COMPLETE: {
+    path: "/signup/complete",
+  },
 } as const;
 
 type RouteKey = keyof typeof routePath;
