@@ -7,7 +7,9 @@ import { useEffect } from "react";
 import { toast } from "react-toastify";
 
 export const SignUpNicknamePage = () => {
-  const { register, formState, handleSubmit } = useForm<{ nickName: string }>();
+  const { register, formState, getValues, setValue, handleSubmit } = useForm<{
+    nickName: string;
+  }>();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,6 +20,12 @@ export const SignUpNicknamePage = () => {
       });
     }
   }, [formState.errors.nickName]);
+
+  useEffect(() => {
+    if (getValues("nickName")) {
+      console.log(getValues("nickName"));
+    }
+  }, [getValues]);
   return (
     <div className="flex flex-col px-[20px] mt-[24px]">
       <h1 className="text-[24px] font-bold mb-[24px]">
@@ -50,6 +58,10 @@ export const SignUpNicknamePage = () => {
             },
           })}
           isFormInvalid={Boolean(formState.errors.nickName)}
+          hasValue={
+            Boolean(formState.isValidating) || Boolean(getValues("nickName"))
+          }
+          clearValue={() => setValue("nickName", "")}
         />
         {formState.errors.nickName?.message ? (
           <span className="text-[12px] text-red-400">

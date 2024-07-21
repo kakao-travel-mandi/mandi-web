@@ -16,3 +16,4 @@ export { default as PinMap } from "./PinMap";
 export { default as Ranking } from "./Ranking";
 export { default as RightArrow } from "./RightArrow";
 export { default as UserMono } from "./UserMono";
+export { default as Xcircle } from "./Xcircle";
