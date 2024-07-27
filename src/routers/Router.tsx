@@ -18,6 +18,11 @@ import {
   SignUpNicknamePage,
   SignUpPage,
 } from "@/pages/SignUp";
+import Privates from "@/pages/Privates";
+import Conditions from "@/pages/Conditions";
+import MyBadge from "@/pages/MyBadge";
+import LoginInfo from "@/pages/LoginInfo";
+import ProfileLeave from "@/pages/ProfileLeave";
 
 const Router = createBrowserRouter([
   {
@@ -64,6 +69,26 @@ const Router = createBrowserRouter([
       {
         path: ROUTE_PATH.SIGNUP_INTRODUCE.path,
         element: <SignUpIntroducePage />,
+      },
+      {
+        path: ROUTE_PATH.BADGE.path,
+        element: <MyBadge />,
+      },
+      {
+        path: ROUTE_PATH.SERVICE_POLICY.path,
+        element: <Conditions />,
+      },
+      {
+        path: ROUTE_PATH.PRIVACY_POLICY.path,
+        element: <Privates />,
+      },
+      {
+        path: ROUTE_PATH.LOGIN_INFO.path,
+        element: <LoginInfo />,
+      },
+      {
+        path: ROUTE_PATH.PROFILE_LEAVE.path,
+        element: <ProfileLeave />,
       },
     ],
   },

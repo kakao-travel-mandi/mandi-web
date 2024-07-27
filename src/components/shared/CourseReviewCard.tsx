@@ -19,14 +19,14 @@ function CourseReviewCard({ course, review, type = "default" }: Props) {
             <p className="text-gray-700">정복 일자</p>
             <p className="text-gray-600">2024.06.04 12:00</p>
           </div>
-          <div className="flex gap-x-6">
+          {/* <div className="flex gap-x-6">
             <p className="text-gray-700">현재 순위</p>
             <p className="text-gray-600">1</p>
           </div>
           <div className="flex gap-x-6">
             <p className="text-gray-700">작성 후기</p>
             <ReviewItem item={review} type={type} />
-          </div>
+          </div> */}
         </div>
       ) : (
         <ReviewItem item={review} type={type} />

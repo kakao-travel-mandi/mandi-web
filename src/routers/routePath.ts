@@ -8,6 +8,10 @@ const routePath = {
     path: "/",
     title: "홈",
   },
+  MY_PAGE: {
+    path: "/profile",
+    title: "내 정보",
+  },
   CONQUERED_COURSE: {
     path: "/profile/course-conquered",
     title: "정복한 코스 목록",
@@ -16,12 +20,28 @@ const routePath = {
     path: "/profile/course-reviews",
     title: "나의 코스 후기",
   },
+  BADGE: {
+    path: "/profile/badge",
+    title: "나의 배지",
+  },
+  LOGIN_INFO: {
+    path: "/profile/login-info",
+    title: "로그인 정보",
+  },
+  PROFILE_LEAVE: {
+    path: "/profile/leave",
+    title: "회원탈퇴",
+  },
+  SERVICE_POLICY: {
+    path: "/profile/service-policy",
+    title: "이용 약관",
+  },
+  PRIVACY_POLICY: {
+    path: "/profile/privacy-policy",
+    title: "개인정보 처리방침",
+  },
   PROFILE_SETTING: {
     path: "/profile/change",
-  },
-  MY_PAGE: {
-    path: "/profile",
-    title: "내 정보",
   },
   RANKING: {
     path: "/ranking",
@@ -52,6 +72,6 @@ const routePath = {
   },
 } as const;
 
-type RouteKey = keyof typeof routePath;
+export type RouteKey = keyof typeof routePath;
 
 export const ROUTE_PATH: Record<RouteKey, Route> = routePath;

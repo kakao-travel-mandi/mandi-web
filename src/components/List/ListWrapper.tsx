@@ -1,3 +1,4 @@
+import { RouteKey } from "@/routers/routePath";
 import ListItem from "./ListItem";
 import { ReactElement } from "react";
 
@@ -5,7 +6,7 @@ export type SettingListProps = {
   id: number;
   title: string;
   icon: ReactElement | string;
-  path: string;
+  path?: RouteKey;
   onClick?: () => void;
 };
 

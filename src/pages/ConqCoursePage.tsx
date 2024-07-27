@@ -1,9 +1,9 @@
 import ConqCourseInfo from "@/components/shared/ConqCourseInfo";
-import SelectChip from "@/components/shared/SelectChip";
+// import SelectChip from "@/components/shared/SelectChip";
 import mountainImg from "/assets/pngs/mountain.png";
 import CourseReviewCard from "@/components/shared/CourseReviewCard";
 import ThumbImg from "/assets/pngs/Rectangle.png";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 const dummyCourse = {
   name: "신선대 둘레길",
@@ -56,39 +56,39 @@ const dummyList = [
 ];
 
 function ConqCoursePage() {
-  const [sortBy, setSortBy] = useState<number>(1);
-  const [showDataList, setShowDataList] = useState(dummyList);
+  // const [sortBy, setSortBy] = useState<number>(1);
+  // const [showDataList, setShowDataList] = useState(dummyList);
 
-  useEffect(() => {
-    let sortedList = [...dummyList];
+  // useEffect(() => {
+  //   let sortedList = [...dummyList];
 
-    switch (sortBy) {
-      case 1:
-        // sort 기준과 데이터 형식에 따른 변경 필요
-        sortedList.sort((a, b) => parseInt(a.created) - parseInt(b.created));
-        break;
-      default:
-        sortedList = dummyList;
-    }
+  //   switch (sortBy) {
+  //     case 1:
+  //       // sort 기준과 데이터 형식에 따른 변경 필요
+  //       sortedList.sort((a, b) => parseInt(a.created) - parseInt(b.created));
+  //       break;
+  //     default:
+  //       sortedList = dummyList;
+  //   }
 
-    setShowDataList(sortedList);
-  }, [sortBy]);
+  //   setShowDataList(sortedList);
+  // }, [sortBy]);
 
-  const selectItems = {
-    DEFAULT: 1,
-    1: "정복 일자 순",
-    2: "코스 거리 순",
-    3: "순위 높은 순",
-    4: "가나다 순",
-  };
+  // const selectItems = {
+  //   DEFAULT: 1,
+  //   1: "정복 일자 순",
+  //   2: "코스 거리 순",
+  //   3: "순위 높은 순",
+  //   4: "가나다 순",
+  // };
 
   return (
     <div>
       <ConqCourseInfo />
       <div className="px-5 py-3 bg-gray-100">
-        <SelectChip items={selectItems} setItem={setSortBy} />
+        {/* <SelectChip items={selectItems} setItem={setSortBy} /> */}
         <div className="mt-3 space-y-5">
-          {showDataList.map((item) => (
+          {dummyList.map((item) => (
             <CourseReviewCard
               key={item.id}
               course={item.course}
