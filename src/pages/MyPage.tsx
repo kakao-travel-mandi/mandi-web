@@ -1,3 +1,4 @@
+import { RouteKey } from "@/routers/routePath";
 import ListWrapper from "../components/List/ListWrapper";
 import ProfileTab from "../components/ProfileTab";
 import set01 from "/assets/pngs/set01.png";
@@ -23,6 +24,7 @@ const MypageList = [
         id: 0,
         title: "나의 뱃지",
         icon: <RightArrow width={12} height={12} />,
+        path: "BADGE" as RouteKey,
       },
     ],
   },
@@ -35,21 +37,25 @@ const MypageList = [
         id: 0,
         title: "이용 약관",
         icon: <RightArrow width={12} height={12} />,
+        path: "SERVICE_POLICY" as RouteKey,
       },
       {
         id: 1,
         title: "개인정보 처리방침",
         icon: <RightArrow width={12} height={12} />,
+        path: "PRIVACY_POLICY" as RouteKey,
       },
       {
         id: 2,
         title: "오픈소스 라이선스",
         icon: <RightArrow width={12} height={12} />,
+        path: "PRIVACY_POLICY" as RouteKey,
       },
       {
         id: 3,
         title: "앱 버전",
         icon: "0.0.01",
+        path: "PRIVACY_POLICY" as RouteKey,
       },
     ],
   },
@@ -62,11 +68,13 @@ const MypageList = [
         id: 0,
         title: "알림 설정",
         icon: <RightArrow width={12} height={12} />,
+        path: "LOGIN_INFO" as RouteKey,
       },
       {
         id: 1,
         title: "로그인 정보",
         icon: <RightArrow width={12} height={12} />,
+        path: "LOGIN_INFO" as RouteKey,
       },
     ],
   },
@@ -77,7 +85,7 @@ function MyPage() {
     ? MypageList
     : MypageList.filter((item) => item.id === 2);
   return (
-    <div>
+    <div className="bg-gray-100">
       <ProfileTab user={dummyUser} />
       {filteredMypageList.map((item) => (
         <ListWrapper

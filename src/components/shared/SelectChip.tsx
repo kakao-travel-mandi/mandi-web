@@ -10,11 +10,12 @@ export type SelectionProps = {
 
 type Props = {
   items: SelectionProps;
+  setItem: (item: number) => void;
 };
 
-function SelectChip({ items }: Props) {
-  const [selected, setSelected] = useState<string>(
-    items[items.DEFAULT] || items[1],
+function SelectChip({ items, setItem }: Props) {
+  const [selected, setSelected] = useState<number>(
+    items.DEFAULT || 1
   );
   const [isShow, setIsShow] = useState<boolean>(false);
 
@@ -29,8 +30,9 @@ function SelectChip({ items }: Props) {
     setIsShow(() => false);
   };
 
-  const handleSelected = (value: string) => {
-    setSelected(value);
+  const handleSelected = (key: number) => {
+    setSelected(key);
+    setItem(selected);
     handleSheetClose();
   };
 
@@ -38,8 +40,9 @@ function SelectChip({ items }: Props) {
     <>
       <div
         onClick={() => setIsShow((pre) => !pre)}
-        className="inline-flex gap-1 whitespace-nowrap items-center bg-white text-gray-700 font-semibold rounded-full px-2.5 py-1.5 text-xs">
-        <p>{selected}</p>
+        className="inline-flex gap-1 whitespace-nowrap items-center bg-white text-gray-700 font-semibold rounded-full px-2.5 py-1.5 text-xs"
+      >
+        <p>{items[selected]}</p>
         <DownArrow className="w-[14px] h-[14px] fill-gray-700" />
       </div>
       <BottomSheet
@@ -50,10 +53,11 @@ function SelectChip({ items }: Props) {
             {options.map(({ key, value }) => (
               <button
                 key={key}
-                onClick={() => handleSelected(value)}
-                className="text-left flex justify-between">
+                onClick={() => handleSelected(key)}
+                className="text-left flex justify-between"
+              >
                 {value}
-                {selected == value && <CheckIcon />}
+                {selected == key && <CheckIcon />}
               </button>
             ))}
           </>

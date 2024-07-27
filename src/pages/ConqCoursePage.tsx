@@ -1,8 +1,9 @@
 import ConqCourseInfo from "@/components/shared/ConqCourseInfo";
-import SelectChip from "@/components/shared/SelectChip";
+// import SelectChip from "@/components/shared/SelectChip";
 import mountainImg from "/assets/pngs/mountain.png";
-import CourseReviewItem from "@/components/shared/CourseReviewItem";
+import CourseReviewCard from "@/components/shared/CourseReviewCard";
 import ThumbImg from "/assets/pngs/Rectangle.png";
+// import { useEffect, useState } from "react";
 
 const dummyCourse = {
   name: "신선대 둘레길",
@@ -36,42 +37,63 @@ const dummyReview = {
 const dummyList = [
   {
     id: 0,
+    created: "1",
     course: dummyCourse,
     review: dummyReview,
   },
   {
     id: 1,
+    created: "2",
     course: dummyCourse,
     review: dummyReview,
   },
   {
     id: 2,
+    created: "3",
     course: dummyCourse,
     review: dummyReview,
   },
 ];
 
 function ConqCoursePage() {
-  const selectItems = {
-    DEFAULT: 1,
-    1: "정복 일자 순",
-    2: "코스 거리 순",
-    3: "순위 높은 순",
-    4: "가나다 순",
-  };
+  // const [sortBy, setSortBy] = useState<number>(1);
+  // const [showDataList, setShowDataList] = useState(dummyList);
+
+  // useEffect(() => {
+  //   let sortedList = [...dummyList];
+
+  //   switch (sortBy) {
+  //     case 1:
+  //       // sort 기준과 데이터 형식에 따른 변경 필요
+  //       sortedList.sort((a, b) => parseInt(a.created) - parseInt(b.created));
+  //       break;
+  //     default:
+  //       sortedList = dummyList;
+  //   }
+
+  //   setShowDataList(sortedList);
+  // }, [sortBy]);
+
+  // const selectItems = {
+  //   DEFAULT: 1,
+  //   1: "정복 일자 순",
+  //   2: "코스 거리 순",
+  //   3: "순위 높은 순",
+  //   4: "가나다 순",
+  // };
 
   return (
     <div>
       <ConqCourseInfo />
-      <div className="px-5 py-3">
-        <SelectChip items={selectItems} />
+      <div className="px-5 py-3 bg-gray-100">
+        {/* <SelectChip items={selectItems} setItem={setSortBy} /> */}
         <div className="mt-3 space-y-5">
           {dummyList.map((item) => (
-            <CourseReviewItem
+            <CourseReviewCard
               key={item.id}
               course={item.course}
               review={item.review}
-              type="default"
+              type="short"
             />
           ))}
         </div>
